@@ -22,9 +22,8 @@
         </svg>
       </button>
     </div>
-
     <div class="carruselPrincipal">
-      <Carousel :images="historyImages" />
+      <Carousel :slides="slides" />
     </div>
   </main>
 </template>
@@ -42,21 +41,12 @@ export default {
     FontAwesomeIcon,
     Carousel,
   },
-  data() {
-    return {
-      historyImages: [
-        // URLs de imágenes para esta sección
-        "url_to_history_image_1.jpg",
-        "url_to_history_image_2.jpg",
-        "url_to_history_image_3.jpg",
-      ],
-    };
-  },
 };
 </script>
 
 <style scoped>
 main {
+  position: relative;
   height: 100%;
 }
 
@@ -192,7 +182,8 @@ main {
 }
 
 .carruselPrincipal {
-  position: fixed;
-  right: 15px;
+  position: absolute;
+  top: 60px;
+  transform: translateX(600px);
 }
 </style>

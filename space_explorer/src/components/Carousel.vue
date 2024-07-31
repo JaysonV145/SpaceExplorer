@@ -6,6 +6,9 @@
     >
       <div v-for="(slide, index) in slides" :key="index" class="carousel-slide">
         <img :src="slide.src" :alt="slide.alt" />
+        <div class="carousel-caption">
+          <p>{{ slide.description }}</p>
+        </div>
       </div>
     </div>
     <button class="prev" @click="prevSlide">Anterior</button>
@@ -14,14 +17,20 @@
 </template>
 
 <script>
+import planetaSinFondo from "@/assets/carl_sagan.jpg";
+import coheteSinFondo from "@/assets/cohete_sin_fondo.png";
 export default {
   data() {
     return {
       currentSlide: 0,
       slides: [
-        { src: "ruta/a/imagen1.jpg", alt: "Descripción 1" },
-        { src: "ruta/a/imagen2.jpg", alt: "Descripción 2" },
-        { src: "ruta/a/imagen3.jpg", alt: "Descripción 3" },
+        {
+          src: planetaSinFondo,
+          alt: "Descripción 1",
+          description:
+            "Carl sagan fue un reconocido astronomo, su investigación ayudo a las astrofísica y su gran sueño siempre fue la divulgación de la ciencia",
+        },
+        { src: coheteSinFondo, alt: "Descripción 22" },
       ],
     };
   },
@@ -46,26 +55,65 @@ export default {
 
 <style scoped>
 .carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
+  width: 600px;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /*Sombra suave*/
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  height: 700px;
+  transition: transform 0.7s ease-in-out; /*Transición suave*/
 }
 
 .carousel-slide {
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: space-between; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
   min-width: 100%;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, transform 0.5s; /*Transición de opacidad y escala*/
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .carousel-slide img {
-  width: 100%;
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del slide */
+  max-height: 100%; /* Mantiene la proporción original */
   display: block;
+  object-fit: contain;
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones en hover */
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+.carousel-caption {
+  flex: 1; /* Toma el resto del espacio disponible */
+  padding-left: 20px; /* Espacio entre la imagen y el texto */
+  max-width: 50%; /* Limita el ancho de la descripción */
+  color: var(--color-blanco);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carousel-caption:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
 button.prev,

@@ -60,14 +60,14 @@ export default {
 <style scoped>
 .space-header {
   display: flex;
-  z-index: 5;
+  z-index: 9;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100px;
   padding: 20px;
-  background-color: transparent;
+  background-color: var(--color-negro);
   color: white;
   position: fixed;
   top: 0;
