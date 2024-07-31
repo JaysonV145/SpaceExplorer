@@ -2,7 +2,6 @@
   <div class="containerPrincipal">
     <TitleSection></TitleSection>
     <MedioSection></MedioSection>
-    <Carousel></Carousel>
   </div>
 </template>
 

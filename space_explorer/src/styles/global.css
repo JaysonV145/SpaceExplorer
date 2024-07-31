@@ -13,14 +13,14 @@
   --color-claro-fondo: #FFFDFB;
   --color-azul: #1750ba;
   --color-blanco:#FFFDFB;
-  --color-negro:#050D21;
+  --color-negro:#060708;
   --color-azul-hover: #0e419f;
 }
 
 body {
     font-family: "Roboto", serif;
     background-image: url('@/assets/fondo.jpg');
-    background-size: cover;
+    background-size:contain;
     background-position: center;
     background-repeat: repeat;
     height: 100%;
@@ -43,13 +43,13 @@ p, ul, li, h3, h4, h5, button, ::placeholder{
   
   body::before {
     content: "";
-    position: absolute;
+    position: fixed; /*Asegura que la capa de opacidad ocupe toda la pantalla, es decir todos los componentes*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Opacidad */
-    z-index: -9; /* Asegura que la capa oscura esté por encima de la imagen de fondo */
+    z-index: -5; /* Asegura que la capa oscura esté por encima de la imagen de fondo */
   }
 
   
