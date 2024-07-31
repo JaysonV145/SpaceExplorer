@@ -1,8 +1,13 @@
 <template>
   <main>
     <div class="titulo-inicio">
-      <h1>Explora lugares increibles</h1>
-      <p>¡Vamos!</p>
+      <h1>Historia</h1>
+      <p>
+        ¡Conoce los hechos históricos de la ciencia en la exploración del
+        universo. Grandes astrónomos, astronautas, físicos, descubre quiénes han
+        hecho parte de los grandes descubrimientos del universo y los
+        astronautas que se han embarcado en la aventura de explorarlos.
+      </p>
     </div>
 
     <div class="botonesInicio">
@@ -17,11 +22,16 @@
         </svg>
       </button>
     </div>
+
+    <div class="carruselPrincipal">
+      <Carousel :images="historyImages" />
+    </div>
   </main>
 </template>
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Carousel from "@/components/Carousel.vue";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -30,6 +40,17 @@ export default {
   name: "MedioSection",
   components: {
     FontAwesomeIcon,
+    Carousel,
+  },
+  data() {
+    return {
+      historyImages: [
+        // URLs de imágenes para esta sección
+        "url_to_history_image_1.jpg",
+        "url_to_history_image_2.jpg",
+        "url_to_history_image_3.jpg",
+      ],
+    };
   },
 };
 </script>
@@ -46,6 +67,10 @@ main {
   text-align: justify;
   margin: 20px 0;
   color: white;
+}
+
+.titulo-inicio h1 {
+  font-size: 80px;
 }
 
 .parrafoBienvenida {
@@ -164,5 +189,10 @@ main {
 
 .botonDestino:hover rect {
   stroke-dashoffset: 0;
+}
+
+.carruselPrincipal {
+  position: fixed;
+  right: 15px;
 }
 </style>

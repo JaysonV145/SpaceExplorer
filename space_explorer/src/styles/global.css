@@ -26,6 +26,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
@@ -47,7 +48,7 @@ p, ul, li, h3, h4, h5, button, ::placeholder{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta este valor para cambiar la opacidad */
+    background-color: rgba(0, 0, 0, 0.8); /* Opacidad */
     z-index: -9; /* Asegura que la capa oscura esté por encima de la imagen de fondo */
   }
 

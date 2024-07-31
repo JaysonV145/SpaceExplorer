@@ -2,6 +2,7 @@
   <div class="containerPrincipal">
     <TitleSection></TitleSection>
     <MedioSection></MedioSection>
+    <Carousel></Carousel>
   </div>
 </template>
 
@@ -13,11 +14,13 @@ import Home from "../view-logic/Home.js";
 
 import TitleSection from "../components/TitleSection.vue";
 import MedioSection from "@/components/MedioSection.vue";
+import Carousel from "@/components/Carousel.vue";
 
 export default {
   components: {
     TitleSection,
     MedioSection,
+    Carousel,
   },
 };
 </script>

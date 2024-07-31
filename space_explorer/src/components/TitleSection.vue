@@ -78,16 +78,16 @@ export default {
 </script>
 
 <style scoped>
-main {
-  overflow-y: auto;
-}
-
 .titulo-inicio {
   width: 500px;
   text-align: start;
   text-align: justify;
   margin: 20px 0;
   color: white;
+}
+
+.titulo-inicio h1 {
+  font-size: 80px;
 }
 
 .parrafoBienvenida {
